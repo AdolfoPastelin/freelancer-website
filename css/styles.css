@@ -1,0 +1,17 @@
+html {
+	font-size: 62.5%; /* 10/16 = 0.625 -> 62.5% */
+}
+
+body {
+	font-size: 1.6rem;
+}
+
+h1 {
+	text-align: center;
+	color: rgba(221, 16, 16, 0.89);
+	font-size: 3.8rem;
+}
+
+span {
+	font-size: 2rem;
+}
