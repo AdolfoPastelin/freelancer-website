@@ -1,17 +1,31 @@
+/* 
+Paleta de colores
+:root representa al html el igual al selector "html" con la diferencia
+de que :root tiene mayor especificidad (0,1,0) que el selector html (0,0,1)
+*/
+:root {
+	/* variables en css */
+	--blanco: #FFF;
+	--oscuro: #212121;
+	--primario: #FFC107;
+	--secundario: #0097A7;
+	--gris: #757575;	
+}
+
 html {
 	font-size: 62.5%; /* 10/16 = 0.625 -> 62.5% */
 }
 
 body {
 	font-size: 1.6rem;
+	font-family: 'Krub', sans-serif;
 }
 
-h1 {
+.titulo {
 	text-align: center;
-	color: rgba(221, 16, 16, 0.89);
 	font-size: 3.8rem;
 }
 
-span {
+.titulo span {
 	font-size: 2rem;
 }
