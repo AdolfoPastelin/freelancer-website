@@ -12,31 +12,24 @@ de que :root tiene mayor especificidad (0,1,0) que el selector html (0,0,1)
 	--gris: #757575;
 }
 
+/* Globales */
+
 html {
 	font-size: 62.5%; /* 10/16 = 0.625 -> 62.5% */
 	/* Sirve para arreglar el descuadre del css con el diseño planeado
 	el padding y margin ya no forman parte de la medida con los elementos */
-	box-sizing: border-box;
+	box-sizing: border-box; /* hack para box-model */
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+	box-sizing: inherit; /* hereda el truco box-model para cualquier pseudo elemento before y after */
 }
 
 body {
-	font-size: 1.6rem;
+	font-size: 16px;
 	font-family: 'Krub', sans-serif;
-}
-
-.titulo {
-	text-align: center;
-	font-size: 3.8rem;
-}
-
-.titulo span {
-	font-size: 2rem;
 }
 
 .contenedor {
@@ -44,6 +37,58 @@ body {
 	margin: 0 auto 0 auto;
 }
 
+.boton {
+	background-color: var(--secundario);
+	color: var(--blanco);
+	padding: 1rem 3rem;
+	margin-top: 1rem;
+	font-size: 2rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	border-radius: .8rem;
+	width: 90%;
+	text-align: center;
+}
+
+.boton:hover {
+	background-color: var(--primario);
+	color: var(--oscuro);
+}
+
+@media (min-width: 768px) {
+	.boton {
+		width: auto;
+	}
+}
+
+/* estilos y tamaños de headings usados
+tipogragia */
+h1 {
+	font-size: 3.8rem;
+}
+
+h2 {
+	font-size: 2.8rem;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+	text-align: center;
+}
+
+/* Titulos */
+
+.titulo span {
+	font-size: 2rem;
+}
+
+/* Navegación principal */
 .nav-bg {
 	background-color: var(--secundario);
 }
@@ -52,6 +97,7 @@ body {
 	padding: 1rem;
 	display: flex;
 	justify-content: space-around;
+	margin-bottom: auto;
 }
 
 /* Hereda estilos de la clase .navegacion-principal ul*/
@@ -80,6 +126,7 @@ body {
 	color: var(--oscuro);
 }
 
+/* Clase hero (header / jumbotron) */
 .hero {
 	background-image: url('../img/hero.jpg');
 	background-repeat: no-repeat;
@@ -90,8 +137,18 @@ body {
 
 .contenido-hero {
 	position: absolute;
-	background-color: rgba(0, 0, 0, .6); /* forma tradicional */
+	background-color: rgba(0, 0, 0, 0.6); /* forma tradicional */
 	/* background-color: rgba(0 0 0 / 70%); */ /* forma nueva (poco soporte) */
 	width: 100%;
 	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+	color: var(--blanco);
 }
