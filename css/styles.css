@@ -5,15 +5,24 @@ de que :root tiene mayor especificidad (0,1,0) que el selector html (0,0,1)
 */
 :root {
 	/* variables en css */
-	--blanco: #FFF;
+	--blanco: #fff;
 	--oscuro: #212121;
-	--primario: #FFC107;
-	--secundario: #0097A7;
-	--gris: #757575;	
+	--primario: #ffc107;
+	--secundario: #0097a7;
+	--gris: #757575;
 }
 
 html {
 	font-size: 62.5%; /* 10/16 = 0.625 -> 62.5% */
+	/* Sirve para arreglar el descuadre del css con el diseño planeado
+	el padding y margin ya no forman parte de la medida con los elementos */
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 body {
@@ -31,7 +40,7 @@ body {
 }
 
 .contenedor {
-	width: 120rem;
+	max-width: 120rem; /* toma 1200px de ser posible */
 	margin: 0 auto 0 auto;
 }
 
@@ -39,25 +48,50 @@ body {
 	background-color: var(--secundario);
 }
 
-.navegacion-principal ul{
-	padding: 1rem;/*temp  */
+.navegacion-principal ul {
+	padding: 1rem;
 	display: flex;
 	justify-content: space-around;
 }
 
-.navegacion-principal li{
+/* Hereda estilos de la clase .navegacion-principal ul*/
+/* celular */
+@media (max-width: 480px) {
+	.navegacion-principal ul {
+		flex-direction: column;
+	}
+}
+
+.navegacion-principal li {
 	display: inline;
 }
 
-.navegacion-principal a{
+.navegacion-principal a {
+	text-align: center;
 	color: var(--blanco);
 	text-decoration: none;
 	font-size: 2.1rem;
 	font-weight: 700;
-	padding: .84rem;
+	padding: 0.84rem;
 }
 
-.navegacion-principal a:hover{
+.navegacion-principal a:hover {
 	background-color: var(--primario);
 	color: var(--oscuro);
+}
+
+.hero {
+	background-image: url('../img/hero.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 450px;
+	position: relative;
+}
+
+.contenido-hero {
+	position: absolute;
+	background-color: rgba(0, 0, 0, .6); /* forma tradicional */
+	/* background-color: rgba(0 0 0 / 70%); */ /* forma nueva (poco soporte) */
+	width: 100%;
+	height: 100%;
 }
