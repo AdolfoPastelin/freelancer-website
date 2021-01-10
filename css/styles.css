@@ -1,5 +1,5 @@
 /* 
-Paleta de colores
+/** Paleta de colores
 :root representa al html el igual al selector "html" con la diferencia
 de que :root tiene mayor especificidad (0,1,0) que el selector html (0,0,1)
 */
@@ -13,7 +13,7 @@ de que :root tiene mayor especificidad (0,1,0) que el selector html (0,0,1)
 	--grisClaro: #dfe9f3;
 }
 
-/* Globales */
+/** Globales **/
 
 html {
 	font-size: 62.5%; /* 10/16 = 0.625 -> 62.5% */
@@ -33,11 +33,6 @@ body {
 	font-family: 'Krub', sans-serif;
 	/* Color de fondo */
 	background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
-}
-
-.contenedor {
-	max-width: 120rem; /* toma 1200px de ser posible */
-	margin: 0 auto 0 auto; /* centra el contenido */
 }
 
 .boton {
@@ -65,14 +60,62 @@ body {
 	}
 }
 
-.sombra { /* sombra del main */
-	-webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
-	-moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
-	box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
+.contenedor {
+	/* contenedor del elemento main */
+	max-width: 120rem; /* toma 1200px de ser posible */
+	margin: 0 auto 0 auto; /* centra el contenido */
 }
 
-/* estilos y tamaños de headings usados
-tipogragia */
+.sombra {
+	/* sombra del main */
+	-webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+	-moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+	box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+	background-color: var(--blanco);
+	padding: 2rem;
+	border-radius: 1rem;
+}
+
+/** Servicios **/
+
+@media (min-width: 768px) {
+	.servicios {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr; /* 1fr = 33.3% */
+		/* grid-template-columns: repeat(3, 1fr) */
+		gap: 3rem;
+	}
+}
+
+/* servicio */
+.servicio { /* contenedor de todo el servicio */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.servicio h3 { 
+	color: var(--secundario);
+	font-weight: bold;
+}
+
+.servicio p {
+	line-height: 1.5;
+	text-align: center;
+}
+
+.servicio .icono {
+	height: 15rem;
+	width: 15rem;
+	background-color: var(--primario);
+	border-radius: 50%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+/** estilos y tamaños de headings usados | tipogragia **/
+
 h1 {
 	font-size: 3.8rem;
 }
@@ -91,13 +134,13 @@ h3 {
 	text-align: center;
 }
 
-/* Titulos */
+/** Titulos **/
 
 .titulo span {
 	font-size: 2rem;
 }
 
-/* Navegación principal */
+/** Navegación principal **/
 .nav-bg {
 	background-color: var(--secundario);
 }
@@ -109,8 +152,7 @@ h3 {
 	margin-bottom: auto;
 }
 
-/* Hereda estilos de la clase .navegacion-principal ul*/
-/* celular */
+/* Hereda estilos de la clase .navegacion-principal ul*/ /* 480px es tamaño de celular promedio*/
 @media (max-width: 480px) {
 	.navegacion-principal ul {
 		flex-direction: column;
@@ -142,6 +184,7 @@ h3 {
 	background-size: cover;
 	height: 450px;
 	position: relative;
+	margin-bottom: 2rem;
 }
 
 .contenido-hero {
