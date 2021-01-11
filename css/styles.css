@@ -8,7 +8,7 @@ de que :root tiene mayor especificidad (0,1,0) que el selector html (0,0,1)
 	--blanco: #fff;
 	--oscuro: #212121;
 	--primario: #ffc107;
-	--secundario: #0097a7;
+	--secundario: #167f99;
 	--gris: #757575;
 	--grisClaro: #dfe9f3;
 }
@@ -231,7 +231,7 @@ h3 {
 
 /* Clase hero (header / jumbotron) */
 .hero {
-	background-image: url('../img/hero.jpg');
+	background-image: url('../img/header3.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 450px;
