@@ -20,6 +20,16 @@ html {
 	/* Sirve para arreglar el descuadre del css con el diseño planeado
 	el padding y margin ya no forman parte de la medida con los elementos */
 	box-sizing: border-box; /* hack para box-model */
+	scroll-snap-type: y mandatory; /* Scroll modificado (funciona de manera pausada cada sección) */
+}
+
+/** Scroll snap */
+/* enfoca y centra la sección a scrollear, no se puede scrollear del inicio a fin de golpe  */
+.servicios,
+.navegacion-principal,
+.formulario{
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
 }
 
 *,
