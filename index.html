@@ -141,38 +141,43 @@
 	<section>
 		<h2>Contacto</h2>
 
-		<form action="#">
+		<form class="formulario" action="#">
 			<fieldset>
 				<legend>Contactanos llenando todos los campos</legend>
 
-				<div>
-					<label for="nombre">Nombre</label>
-					<input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre." />
-				</div>
+				<div class="contenedor-campos">
+					<div class="campo">
+						<label for="nombre">Nombre</label>
+						<input class="input-text" type="text" name="nombre" id="nombre"
+							placeholder=" ej. Rick" />
+					</div>
 
-				<div>
-					<label for="">Teléfono</label>
-					<input type="tel" name="telefono" id="telefono" placeholder="Ingrese número de teléfono." />
-				</div>
+					<div class="campo">
+						<label for="">Teléfono</label>
+						<input class="input-text" type="tel" name="telefono" id="telefono"
+							placeholder="ej. 2291465739" />
+					</div>
 
-				<div>
-					<label for="">Correo</label>
-					<input type="email" name="correo" id="correo" placeholder="Ingrese su email." />
-				</div>
+					<div class="campo">
+						<label for="">Correo</label>
+						<input class="input-text" type="email" name="correo" id="correo"
+							placeholder="ej. email@example.com" />
+					</div>
 
-				<div>
-					<label for="">Mensaje</label>
-					<textarea name="mensaje" id="mensaje"></textarea>
-				</div>
+					<div class="campo">
+						<label for="">Mensaje</label>
+						<textarea class="input-text" name="mensaje" id="mensaje"></textarea>
+					</div>
+				</div> <!-- /div .contenedor-campos -->
 
-				<div>
-					<button type="submit" value="Enviar">Enviar</button>
+				<div class="alinear-derecha flex">
+					<button class="boton w-sm-100" type="submit" value="Enviar">Enviar</button>
 				</div>
 			</fieldset>
 		</form>
 	</section>
 
-	<footer>
+	<footer class="footer">
 		<p>Derechos reservados&copy; 2021</p>
 	</footer>
 </body>
