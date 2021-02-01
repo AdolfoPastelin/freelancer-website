@@ -231,12 +231,19 @@ h3 {
 
 /* Clase hero (header / jumbotron) */
 .hero {
-	background-image: url('../img/header3.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 450px;
 	position: relative;
 	margin-bottom: 2rem;
+}
+
+.webp .hero {
+	background-image: url('../img/header3.webp');
+}
+
+.no-webp .hero{
+	background-image: url('../img/header3.jpg');
 }
 
 .contenido-hero {
